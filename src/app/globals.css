@@ -233,3 +233,12 @@ p {
 .z-content { z-index: 10; }
 .z-background { z-index: 5; }
 .z-base { z-index: 1; }
+
+/* NUCLEAR CSS FIX - KILL ALL GHOST PATTERNS */
+* { 
+  background-image: none !important; 
+  background-attachment: initial !important; 
+}
+body { 
+  background-color: #000000 !important; 
+}
