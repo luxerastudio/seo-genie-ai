@@ -115,13 +115,13 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white relative">
+    <div id="seo-genie-ultimate-final" className="min-h-screen bg-black text-white relative">
       
-      <nav className="bg-black border-b border-gray-800 sticky top-0 z-50">
+      <nav className="glass-card sticky top-0 z-50 border-0">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600">
                 <Sparkles className="h-5 w-5 text-white" />
               </div>
               <span className="text-xl font-bold text-white">SEO-Genie AI</span>
@@ -129,7 +129,7 @@ export default function Home() {
             <div className="flex items-center space-x-4">
               <Button 
                 onClick={() => window.location.href = "/dashboard"}
-                className="bg-indigo-600 hover:bg-indigo-700 px-6 py-3 font-bold shadow-lg text-white"
+                className="premium-button"
               >
                 Launch App
               </Button>
@@ -145,7 +145,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-indigo-900 border border-indigo-700 mb-6">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-900/50 to-purple-900/50 border border-indigo-700/50 mb-6">
               <span className="text-sm font-semibold text-indigo-300">Enterprise AI Platform</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
@@ -160,7 +160,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-indigo-600 hover:bg-indigo-700 px-8 py-4 text-lg font-bold shadow-xl text-white"
+                className="premium-button"
                 onClick={() => window.location.href = "/dashboard"}
               >
                 Start Free Trial
@@ -193,16 +193,16 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap gap-8 max-w-7xl mx-auto justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 border border-gray-700 w-full md:w-1/2 lg:w-1/3"
+              className="glass-card hover:shadow-xl transition-shadow p-8"
             >
-              <div className={`inline-flex p-3 rounded-xl bg-indigo-600 mb-4`}>
+              <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.gradient} mb-4`}>
                 <feature.icon className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">
@@ -231,14 +231,14 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap gap-8 max-w-7xl mx-auto justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center ${plan.popular ? 'ring-2 ring-indigo-500' : ''} border border-gray-700 w-full md:w-1/2 lg:w-1/3`}
+              className={`glass-card text-center ${plan.popular ? 'ring-2 ring-indigo-500' : ''}`}
             >
               <h3 className="text-2xl font-bold text-white mb-2">
                 {plan.name}
@@ -249,7 +249,7 @@ export default function Home() {
                 <span className="text-lg font-normal text-gray-400">/month</span>
               </div>
               <Button 
-                className={`w-full bg-indigo-600 hover:bg-indigo-700 mb-6 text-white ${plan.popular ? 'shadow-2xl' : ''}`}
+                className={`w-full premium-button mb-6 ${plan.popular ? 'shadow-2xl' : ''}`}
                 onClick={() => window.location.href = "/dashboard"}
               >
                 {plan.name === "Starter" ? "Get Started" : plan.name === "Pro" ? "Start Pro Trial" : "Contact Sales"}
@@ -282,7 +282,7 @@ export default function Home() {
           </p>
           <Button 
             size="lg"
-            className="bg-indigo-600 hover:bg-indigo-700 px-8 py-4 text-lg font-bold shadow-xl text-white"
+            className="premium-button"
             onClick={() => window.location.href = "/dashboard"}
           >
             Get Started Now
@@ -291,10 +291,10 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <footer className="bg-gray-900 py-16 px-6 border-t border-gray-800">
+      <footer className="glass-card py-16 px-6 border-t-0">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap gap-8">
-            <div className="w-full md:w-1/2 lg:w-1/4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
               <h4 className="text-lg font-bold text-white mb-4">Product</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Features</a></li>
@@ -303,7 +303,7 @@ export default function Home() {
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a></li>
               </ul>
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/4">
+            <div>
               <h4 className="text-lg font-bold text-white mb-4">Company</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About</a></li>
@@ -312,7 +312,7 @@ export default function Home() {
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/4">
+            <div>
               <h4 className="text-lg font-bold text-white mb-4">Legal</h4>
               <ul className="space-y-2">
                 <li><a href="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
@@ -321,7 +321,7 @@ export default function Home() {
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">GDPR</a></li>
               </ul>
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/4">
+            <div>
               <h4 className="text-lg font-bold text-white mb-4">Resources</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Help Center</a></li>
